@@ -1,16 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int maxsimum(int a[], int n)
-{   
-    int m;
-    if (m == 0)
-        return a[m];
-    int m = n-1;
-    int u = maxsimum(a,m);
-    for(int i = 0; i<n;i++){
-        return u > v ? u : v;
+int Valor(int a[], int n, int maior)
+{
 
+    if (n == 0)
+    {
+        return maior;
+    }
+
+    if (a[n] > maior)
+    {
+        maior = a[n];
+        Valor(a, n - 1, maior);
+    }
+
+    else
+    {
+        Valor(a, n - 1, maior);
     }
 }
 int main()
@@ -18,8 +25,8 @@ int main()
 {
     int a[] = {34, 23, 45, 56, 30, 31, 57, 33, 55, 10};
     int n = sizeof(a) / sizeof(int);
-
-    printf("%d\n",maxsimum(a,n));
+    int maior = 0;
+    printf("%d\n", Valor(a, n, maior));
 
     return 0;
 }
