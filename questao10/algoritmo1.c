@@ -45,6 +45,7 @@ void dijkstra(int grafo[Vertices][Vertices], int n, int source)
             }
         }
     }
+    /* deifinindo a distancia e se os vertices foram ou não visitados */
 
     for (i = 0; i < n; i++)
     {
@@ -56,7 +57,11 @@ void dijkstra(int grafo[Vertices][Vertices], int n, int source)
     distancia[source] = 0;
     visitados[source] = 1;
     count = 1;
+/******************************************/
 
+
+
+/*Relaxamento de arestas */
     while (count < n - 1)
     {
         mindistancia = INF;
@@ -83,6 +88,9 @@ void dijkstra(int grafo[Vertices][Vertices], int n, int source)
         }
         count++;
     }
+/***********************************************************/
+
+
 /*Essa a parte em diante irá imprimir a saída e o caminho */
     for (i = 0; i < n; i++)
     {
